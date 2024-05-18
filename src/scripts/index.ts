@@ -1,2 +1,2 @@
 import "./stars";
-import "./stars-click";
+import "./starry-clicking";

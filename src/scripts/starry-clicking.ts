@@ -15,12 +15,20 @@ function animateHearts() {
 		if (heart.alpha <= 0) {
 			document.body.removeChild(heart.el);
 			hearts.splice(i, 1);
-			i--; // Adjust index after splice
+			i--;
 		} else {
 			heart.y--;
 			heart.scale += 0.004;
 			heart.alpha -= 0.013;
-			heart.el.style.cssText = `left:${heart.x}px;top:${heart.y}px;opacity:${heart.alpha};transform:scale(${heart.scale},${heart.scale}) rotate(45deg);background:${heart.color};z-index:99999`;
+			heart.el.textContent = " ";
+			heart.el.style.cssText = `
+			left: ${heart.x}px;
+			top: ${heart.y}px;
+			opacity: ${heart.alpha};
+			transform: scale(${heart.scale}, ${heart.scale});
+			z-index: 17976931348623157
+			`;
+			heart.el.style.color = heart.color;
 		}
 	}
 	requestAnimationFrame(animateHearts);
@@ -35,8 +43,8 @@ function addClickListener() {
 }
 
 function addHeart(event: MouseEvent) {
-	const heartDiv = document.createElement("div");
-	heartDiv.className = "heart";
+	const heartDiv = document.createElement("i");
+	heartDiv.className = "heart fa fa-star";
 	const heart: Heart = {
 		el: heartDiv,
 		x: event.clientX - 5,
@@ -62,33 +70,25 @@ function addCSS(css: string) {
 	}
 }
 
-const colors = ["#EEAA50", "#0EEAA5", "#AAEE50", "#0AAEE5"];
-
 function getRandomColor(): string {
-	return colors[Math.floor(Math.random() * colors.length)];
+	const r = Math.floor(Math.random() * 256);
+	const g = Math.floor(Math.random() * 256);
+	const b = Math.floor(Math.random() * 256);
+	return "rgb(" + r + "," + g + "," + b + ")";
 }
 
 addCSS(`
 .heart {
+	user-select: none;
     width: 10px;
     height: 10px;
     position: fixed;
-    background: #f00;
-    transform: rotate(45deg);
 }
 .heart:after, .heart:before {
-    content: '';
     width: inherit;
     height: inherit;
-    background: inherit;
     border-radius: 50%;
     position: fixed;
-}
-.heart:after {
-    top: -5px;
-}
-.heart:before {
-    left: -5px;
 }
 `);
 
