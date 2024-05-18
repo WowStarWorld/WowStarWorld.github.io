@@ -44,7 +44,7 @@ class Stars implements IStar {
 	move () {
 		this.y -= 0.15;
 		if (this.y <= -10) this.y = document.documentElement.clientHeight + 10;
-		this.draw(ctx);
+		this.draw(ctx!!);
 	}
 	
 	die () {
@@ -53,7 +53,7 @@ class Stars implements IStar {
 }
 
 const stars: Stars[] = [];
-let ctx: CanvasRenderingContext2D;
+let ctx: CanvasRenderingContext2D | null;
 
 document.addEventListener("readystatechange", ready);
 
@@ -80,11 +80,11 @@ function ready () {
 			
 			// eslint-disable-next-line no-inner-declarations
 			function animate (): void {
-				ctx.clearRect(0, 0, WIDTH, HEIGHT);
+				ctx!!.clearRect(0, 0, WIDTH, HEIGHT);
 				
 				stars.forEach(star => {
 					star.move();
-					star.draw(ctx);
+					star.draw(ctx!!);
 				});
 				
 				if (stars.length <= 0) initStars();

@@ -26,6 +26,7 @@ onMounted(
 	() => {
 		function resize () {
 			const canvas = document.getElementById("star-canvas");
+			if (canvas == null) return;
 			canvas.setAttribute("height", String(document.documentElement.clientHeight));
 			canvas.setAttribute("width", String(document.documentElement.clientWidth));
 		}
