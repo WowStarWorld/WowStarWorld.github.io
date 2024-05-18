@@ -27,7 +27,7 @@ function animateHearts() {
 }
 
 function addClickListener() {
-	const originalClick = window.onclick;
+	const originalClick = window.onclick as any;
 	window.onclick = function (event: MouseEvent) {
 		if (originalClick) originalClick(event);
 		addHeart(event);
