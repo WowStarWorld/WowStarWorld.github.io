@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-	<el-avatar :size="size" src="https://avatars.githubusercontent.com/u/98941734?s=48&v=4" class="logo"/>
+	<a-avatar :style="{ 'pointer-events': 'none' }" :size="size" image-url="https://avatars.githubusercontent.com/u/98941734?s=48&v=4" class="logo"/>
 </template>
 
 <style scoped lang="scss">

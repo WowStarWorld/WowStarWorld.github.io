@@ -1,31 +1,24 @@
 <template>
-	<el-menu
-		class="el-menu-demo"
-		mode="horizontal"
-		@select="onSelect"
-		:ellipsis="false"
-	>
-		<el-menu-item index="icon">
-			<template #title>
-				<MyAvatar :size="'large'"/>
-				<span style="padding-left: 1em;"/>
-				<span style="color: #000000;">
-					StarWorldの
-				</span>
-				<span style="color: #1fa3ff;">
-					空间站
-				</span>
-			</template>
-		</el-menu-item>
-		<div class="flex-grow" />
-		<el-menu-item index="bilibili">
-			<i class="fab fa-bilibili fa-2x"/>
-		</el-menu-item>
-		<el-menu-item index="github">
-			<i class="fab fa-github fa-2x"/>
-		</el-menu-item>
-	</el-menu>
+	<a-menu mode="horizontal" :default-selected-keys="['1']" @menu-item-click="onSelect">
+		<a-menu-item key="-" :style="{ padding: 0, marginRight: '38px', 'pointer-events': 'none' }" >
+			<MyAvatar/>
+			&nbsp;StarWorldの空间站
+		</a-menu-item>
+		<a-space size="large"/>
+		<a-menu-item key="bilibili">
+			<i class="fab fa-bilibili"/>
+		</a-menu-item>
+		<a-menu-item key="github">
+			<i class="fab fa-github"/>
+		</a-menu-item>
+	</a-menu>
 </template>
+
+<style scoped lang="scss">
+.arco-menu {
+	opacity: 85%;
+}
+</style>
 
 <script lang="ts" setup>
 import MyAvatar from "./MyAvatar.vue";
@@ -36,9 +29,3 @@ const onSelect = (key: string) => {
 };
 
 </script>
-
-<style scoped lang="scss">
-.flex-grow {
-	flex-grow: 1;
-}
-</style>

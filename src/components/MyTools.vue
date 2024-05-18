@@ -1,9 +1,8 @@
 <template>
-	<el-button @click="gotoToolBox">
+	<a-button @click="gotoToolBox" type="primary">
 		<i class="fa fa-toolbox"/>
-		&nbsp;
-		Toolbox
-	</el-button>
+		&nbsp;工具箱
+	</a-button>
 </template>
 
 <script setup lang="ts">

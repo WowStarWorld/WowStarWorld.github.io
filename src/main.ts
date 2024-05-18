@@ -1,11 +1,14 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 
-import { default as ElementPlus } from 'element-plus';
-import 'element-plus/dist/index.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import ArcoVue from '@arco-design/web-vue';
+import '@arco-design/web-vue/dist/arco.css';
+
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const app = createApp(App);
 
-app.use(ElementPlus as any);
+document.body.setAttribute('arco-theme', 'dark');
+
+app.use(ArcoVue as any);
 app.mount('#app');
