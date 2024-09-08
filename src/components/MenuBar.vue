@@ -2,7 +2,7 @@
 	<a-menu mode="horizontal" :default-selected-keys="['1']" @menu-item-click="onSelect">
 		<a-menu-item key="-" :style="{ padding: 0, marginRight: '38px', 'pointer-events': 'none' }" >
 			<MyAvatar/>
-			&nbsp;StarWorldの空间站
+			&nbsp;StarWorldの站点
 		</a-menu-item>
 		<a-space size="large"/>
 		<a-menu-item key="github">
