@@ -5,9 +5,6 @@
 			&nbsp;StarWorldの空间站
 		</a-menu-item>
 		<a-space size="large"/>
-		<a-menu-item key="bilibili">
-			<i class="fab fa-bilibili"/>
-		</a-menu-item>
 		<a-menu-item key="github">
 			<i class="fab fa-github"/>
 		</a-menu-item>
@@ -24,8 +21,7 @@
 import MyAvatar from "./MyAvatar.vue";
 
 const onSelect = (key: string) => {
-	if (key == "bilibili") location.href = "https://space.bilibili.com/588725047";
-	else if (key == "github") location.href = "https://github.com/WowStarWorld";
+	if (key == "github") location.href = "https://github.com/WowStarWorld";
 };
 
 </script>
