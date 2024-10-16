@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 function gotoToolBox() {
-	location.href = "https://WowStarWorld.github.io/StarWorldToolBox-Plus";
+	location.href = "https://WowStarWorld.github.io/starworld-toolbox-plus";
 }
 </script>
 
